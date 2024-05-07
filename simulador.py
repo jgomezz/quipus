@@ -1,52 +1,64 @@
 import turtle
 
-# CONSIDERAR VS
+OFFSET_X = -300
+OFFSET_Y = -200
+RADIO_CIRCULO = 7
+
 def dibujar_cuerda(color, numeros, i):
-    # Configura el color y posición inicial de la cuerda
+
+    # Configura el color 
     turtle.color(color)
-    x_start = -300
-    y_start = -200 + 100*i  #50 * len(numeros)
-    turtle.penup()
-    turtle.goto(x_start, y_start)
-    turtle.pendown()
+    
+    # Posición inicial de la cuerda
+    x = OFFSET_X
+    y = OFFSET_Y + 100 * i 
+    
+    turtle.penup()     # Levantar la pluma de la tortuga
+    turtle.goto(x, y)  # Ir a la posicion x, y
+    turtle.pendown()   # Bajar la pluma de la tortuga
 
     # Dibuja la cuerda
-    turtle.forward(600)
+    turtle.forward(600) # Mueve la tortuja hacia adelante
     
     # Establece color de los circulos
     turtle.fillcolor(color)
 
+    # desplazamiento del priemr circulo
+    x = x + 20
+
     # Dibuja los nudos en la cuerda
     for numero in numeros:
         turtle.penup()
-        turtle.goto(x_start + 20, y_start)
+        turtle.goto(x , y)
         turtle.pendown()
-        k = 1
-        for _ in range(numero):
+
+        for i in range(numero):
             turtle.begin_fill()
-            turtle.circle(7)  # Dibuja un círculo para cada "nudo"
+            turtle.circle(RADIO_CIRCULO)  # Dibuja un círculo para cada "nudo"
             turtle.end_fill()
             turtle.penup()
-            turtle.goto(x_start + 20   + 15*k, y_start)  # Espacio entre nudos
-            k = k + 1
+            turtle.goto(x + 15 * (i + 1), y)  # Espacio entre nudos
             turtle.pendown()
-        x_start += 150  # Espacio entre grupos de nudos
 
-def main():
-    turtle.speed(-1)
+        x = x + 150  # Espacio entre grupos de nudos
+
+    
+if __name__ == "__main__":
+
+    turtle.speed(0)
+
     quipu = {
-        'red': [3, 1, 4],  # Cada lista representa los nudos en una cuerda
-        'green': [1, 5, 9, 2],
-        'blue': [6, 1, 8],
+        'red'   : [3, 1, 4, 1],  # Cada lista representa los nudos en una cuerda
+        'green' : [1, 5, 9, 2],
+        'blue'  : [6, 1, 8, 7],
         'orange': [2, 4, 2, 7],
-        'purple': [7, 3, 4, 5]
+        'purple': [9, 9, 9, 9]
     }
     
     # Dibuja cada cuerda del quipu
-    for i, (color, nums) in enumerate(quipu.items()):
+    i = 0
+    for color, nums in quipu.items():
         dibujar_cuerda(color, nums, i)
-    
-    turtle.done()
+        i = i + 1
 
-if __name__ == "__main__":
-    main()
+    turtle.done()
