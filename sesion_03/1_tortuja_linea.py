@@ -11,5 +11,7 @@ if __name__ == "__main__":
     # Dibuja una linea de 100 pixeles
     turtle.forward(100)
 
+    turtle.write("hoola")
+
     # Cierra la ventana cuando se hace clic en ella
     turtle.done()
