@@ -64,44 +64,44 @@ for number in numbers:
 
     str_number = f"{number:04}" 
 
-    image_turtle7 = turtle.Turtle()
-    image_turtle7.shape("assets/primary-cord.gif")  
-    image_turtle7.penup()
-    image_turtle7.goto(x, 30)  
-
     image_turtle1 = turtle.Turtle()
-    image_turtle1.shape("assets/grid.gif")  
+    image_turtle1.shape("assets/primary-cord.gif")  
     image_turtle1.penup()
-    image_turtle1.goto(x, -150)  
+    image_turtle1.goto(x, 30)  
 
     image_turtle2 = turtle.Turtle()
-    image_turtle2.shape("assets/pendant-cord.gif")  
+    image_turtle2.shape("assets/grid.gif")  
     image_turtle2.penup()
-    image_turtle2.goto(x, -190)  
+    image_turtle2.goto(x, -150)  
 
     image_turtle3 = turtle.Turtle()
-    if str_number[IDX_MIL] != '0':
-        image_turtle3.shape(get_imagename_not_unid(str_number[IDX_MIL]))
-        image_turtle3.penup()
-        image_turtle3.goto(x, -40)  
+    image_turtle3.shape("assets/pendant-cord.gif")  
+    image_turtle3.penup()
+    image_turtle3.goto(x, -190)  
 
     image_turtle4 = turtle.Turtle()
-    if str_number[IDX_CEN] != '0':
-        image_turtle4.shape(get_imagename_not_unid(str_number[IDX_CEN]))
+    if str_number[IDX_MIL] != '0':
+        image_turtle4.shape(get_imagename_not_unid(str_number[IDX_MIL]))
         image_turtle4.penup()
-        image_turtle4.goto(x, -150)  
+        image_turtle4.goto(x, -40)  
 
     image_turtle5 = turtle.Turtle()
-    if str_number[IDX_DEC] != '0':
-        image_turtle5.shape(get_imagename_not_unid(str_number[IDX_DEC]))
+    if str_number[IDX_CEN] != '0':
+        image_turtle5.shape(get_imagename_not_unid(str_number[IDX_CEN]))
         image_turtle5.penup()
-        image_turtle5.goto(x, -260)  
+        image_turtle5.goto(x, -150)  
 
     image_turtle6 = turtle.Turtle()
-    if str_number[IDX_UNI] != '0':
-        image_turtle6.shape(get_imagename_unid(str_number[IDX_UNI]))
+    if str_number[IDX_DEC] != '0':
+        image_turtle6.shape(get_imagename_not_unid(str_number[IDX_DEC]))
         image_turtle6.penup()
-        image_turtle6.goto(x, -370)  
+        image_turtle6.goto(x, -260)  
+
+    image_turtle7 = turtle.Turtle()
+    if str_number[IDX_UNI] != '0':
+        image_turtle7.shape(get_imagename_unid(str_number[IDX_UNI]))
+        image_turtle7.penup()
+        image_turtle7.goto(x, -370)  
 
     x = x + 50
 
