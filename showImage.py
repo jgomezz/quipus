@@ -8,13 +8,12 @@ def get_imagename_unid(n):
     return f"assets/long-knot-{n}.gif"
 
 
-turtle.speed(10)
+#turtle.speed(10)
 
 # Hide the turtle pointer
-turtle.hideturtle()
+# turtle.hideturtle()
 
 turtle.tracer(0, 0)  # Turn off animation, set delay to 0
-
 
 # Set up the screen
 screen = turtle.Screen()
