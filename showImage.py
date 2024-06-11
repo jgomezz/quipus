@@ -44,6 +44,15 @@ screen.addshape("assets/overhand-knot-6.gif")
 screen.addshape("assets/overhand-knot-7.gif")  
 screen.addshape("assets/overhand-knot-8.gif")  
 screen.addshape("assets/overhand-knot-9.gif")  
+screen.addshape("assets/top-overhand-knot-1.gif")  
+screen.addshape("assets/top-overhand-knot-2.gif")  
+screen.addshape("assets/top-overhand-knot-3.gif")  
+screen.addshape("assets/top-overhand-knot-4.gif")  
+screen.addshape("assets/top-overhand-knot-5.gif")  
+screen.addshape("assets/top-overhand-knot-6.gif")  
+screen.addshape("assets/top-overhand-knot-7.gif")  
+screen.addshape("assets/top-overhand-knot-8.gif")  
+screen.addshape("assets/top-overhand-knot-9.gif")  
 
 IDX_MIL = 0
 IDX_CEN = 1
@@ -61,7 +70,87 @@ image_turtle0.penup()
 image_turtle0.goto(x-40, y)  
 image_turtle0.stamp() 
 
-for number in numbers:
+for number in numbers[:3]:
+
+    str_number = f"{number:04}" 
+
+    image_turtle1 = turtle.Turtle()
+    image_turtle1.shape("assets/primary-cord.gif")  
+    image_turtle1.penup()
+    image_turtle1.goto(x, y)  
+
+    image_turtle2 = turtle.Turtle()
+    image_turtle2.shape("assets/grid.gif")  
+    image_turtle2.penup()
+    image_turtle2.goto(x, y-180)  
+
+    image_turtle3 = turtle.Turtle()
+    image_turtle3.shape("assets/pendant-cord.gif")  
+    image_turtle3.penup()
+    image_turtle3.goto(x, y-220)  
+
+    image_turtle4 = turtle.Turtle()
+    if str_number[IDX_MIL] != '0':
+        image_turtle4.shape(get_imagename_not_unid(str_number[IDX_MIL]))
+        image_turtle4.penup()
+        image_turtle4.goto(x, y-70)  
+
+    image_turtle5 = turtle.Turtle()
+    if str_number[IDX_CEN] != '0':
+        image_turtle5.shape(get_imagename_not_unid(str_number[IDX_CEN]))
+        image_turtle5.penup()
+        image_turtle5.goto(x, y-180)  
+
+    image_turtle6 = turtle.Turtle()
+    if str_number[IDX_DEC] != '0':
+        image_turtle6.shape(get_imagename_not_unid(str_number[IDX_DEC]))
+        image_turtle6.penup()
+        image_turtle6.goto(x, y-290)  
+
+    image_turtle7 = turtle.Turtle()
+    if str_number[IDX_UNI] != '0':
+        image_turtle7.shape(get_imagename_unid(str_number[IDX_UNI]))
+        image_turtle7.penup()
+        image_turtle7.goto(x, y-400)  
+
+    x = x + 50
+
+    image_turtle1.stamp() 
+    image_turtle2.stamp() 
+    image_turtle3.stamp() 
+    image_turtle4.stamp() 
+    image_turtle5.stamp() 
+    image_turtle6.stamp() 
+    image_turtle7.stamp() 
+
+image_turtle10 = turtle.Turtle()
+image_turtle10.shape("assets/primary-cord.gif")  
+image_turtle10.penup()
+image_turtle10.goto(x, y)  
+
+image_turtle11 = turtle.Turtle()
+image_turtle11.shape("assets/top-cord.gif")  
+image_turtle11.penup()
+image_turtle11.goto(x+250, y+140)  
+
+image_turtle12 = turtle.Turtle()
+image_turtle12.shape("assets/top-grid.gif")  
+image_turtle12.penup()
+image_turtle12.goto(x+235, y+265)  
+
+image_turtle13 = turtle.Turtle()
+image_turtle13.shape("assets/top-overhand-knot-9.gif")  
+image_turtle13.penup()
+image_turtle13.goto(x+80, y+60)  
+
+image_turtle10.stamp() 
+image_turtle11.stamp() 
+image_turtle12.stamp() 
+image_turtle13.stamp() 
+
+x = x + 50
+
+for number in numbers[2:4]:
 
     str_number = f"{number:04}" 
 
@@ -114,19 +203,6 @@ for number in numbers:
     image_turtle5.stamp() 
     image_turtle6.stamp() 
     image_turtle7.stamp() 
-
-image_turtle11 = turtle.Turtle()
-image_turtle11.shape("assets/top-cord.gif")  
-image_turtle11.penup()
-image_turtle11.goto(x+200, y+140)  
-
-image_turtle12 = turtle.Turtle()
-image_turtle12.shape("assets/top-grid.gif")  
-image_turtle12.penup()
-image_turtle12.goto(x+185, y+265)  
-
-image_turtle11.stamp() 
-image_turtle12.stamp() 
 
 
 
