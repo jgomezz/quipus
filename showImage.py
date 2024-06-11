@@ -44,6 +44,15 @@ screen.addshape("assets/overhand-knot-6.gif")
 screen.addshape("assets/overhand-knot-7.gif")  
 screen.addshape("assets/overhand-knot-8.gif")  
 screen.addshape("assets/overhand-knot-9.gif")  
+screen.addshape("assets/top-long-knot-1.gif")  
+screen.addshape("assets/top-long-knot-2.gif")  
+screen.addshape("assets/top-long-knot-3.gif")  
+screen.addshape("assets/top-long-knot-4.gif")  
+screen.addshape("assets/top-long-knot-5.gif")  
+screen.addshape("assets/top-long-knot-6.gif")  
+screen.addshape("assets/top-long-knot-7.gif")  
+screen.addshape("assets/top-long-knot-8.gif")  
+screen.addshape("assets/top-long-knot-9.gif")  
 screen.addshape("assets/top-overhand-knot-1.gif")  
 screen.addshape("assets/top-overhand-knot-2.gif")  
 screen.addshape("assets/top-overhand-knot-3.gif")  
@@ -70,7 +79,7 @@ image_turtle0.penup()
 image_turtle0.goto(x-40, y)  
 image_turtle0.stamp() 
 
-for number in numbers[:3]:
+for number in numbers[:2]:
 
     str_number = f"{number:04}" 
 
@@ -143,10 +152,17 @@ image_turtle13.shape("assets/top-overhand-knot-9.gif")
 image_turtle13.penup()
 image_turtle13.goto(x+80, y+60)  
 
+image_turtle14 = turtle.Turtle()
+image_turtle14.shape("assets/top-long-knot-1.gif")  
+image_turtle14.penup()
+image_turtle14.goto(x+470, y+280)  
+
+
 image_turtle10.stamp() 
 image_turtle11.stamp() 
 image_turtle12.stamp() 
 image_turtle13.stamp() 
+image_turtle14.stamp() 
 
 x = x + 50
 
