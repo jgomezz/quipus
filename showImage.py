@@ -6,6 +6,12 @@ def get_imagename_not_unid(n):
 def get_imagename_unid(n):
     return f"assets/long-knot-{n}.gif"
 
+def get_imagename_top_not_unid(n):
+    return f"assets/top-overhand-knot-{n}.gif"
+
+def get_imagename_top_unid(n):
+    return f"assets/top-long-knot-{n}.gif"
+
 #turtle.speed(10)
 
 # Hide the turtle pointer
@@ -68,7 +74,19 @@ IDX_CEN = 1
 IDX_DEC = 2
 IDX_UNI = 3
 
-numbers =[1000, 2024, 1234 , 5234, 120, 1000, 9999]
+IDX_SUM_DEC_MIL = 0
+IDX_SUM_UNI_MIL = 1
+IDX_SUM_CEN     = 2
+IDX_SUM_DEC     = 3
+IDX_SUM_UNI     = 4
+
+
+numbers =[1000, 2024, 1234 , 5234, 120, 1000]
+
+numbers =[1, 20, 12 , 10, 1, 3]
+
+_sum = sum(numbers)
+print(_sum)
 
 x = -350
 y =  80 # 30
@@ -79,7 +97,7 @@ image_turtle0.penup()
 image_turtle0.goto(x-40, y)  
 image_turtle0.stamp() 
 
-for number in numbers[:2]:
+for number in numbers[:3]:
 
     str_number = f"{number:04}" 
 
@@ -147,26 +165,57 @@ image_turtle12.shape("assets/top-grid.gif")
 image_turtle12.penup()
 image_turtle12.goto(x+235, y+265)  
 
+##
+str_sum = f"{_sum:05}"
+
+# DEC MIL
 image_turtle13 = turtle.Turtle()
-image_turtle13.shape("assets/top-overhand-knot-9.gif")  
-image_turtle13.penup()
-image_turtle13.goto(x+80, y+60)  
+if str_sum[IDX_SUM_DEC_MIL] != '0':
+    image_turtle13.shape(get_imagename_top_not_unid(str_sum[IDX_SUM_DEC_MIL])) 
+    image_turtle13.penup()
+    image_turtle13.goto(x+80, y+60)  
 
+# MIL
 image_turtle14 = turtle.Turtle()
-image_turtle14.shape("assets/top-long-knot-1.gif")  
-image_turtle14.penup()
-image_turtle14.goto(x+470, y+280)  
+if str_sum[IDX_SUM_UNI_MIL] != '0':
+    image_turtle14.shape(get_imagename_top_not_unid(str_sum[IDX_SUM_UNI_MIL])) 
+    image_turtle14.penup()
+    image_turtle14.goto(x+180, y+118)  
 
+# CENT
+image_turtle15 = turtle.Turtle()
+if str_sum[IDX_SUM_CEN] != '0':
+    image_turtle15.shape(get_imagename_top_not_unid(str_sum[IDX_SUM_CEN])) 
+    image_turtle15.penup()
+    image_turtle15.goto(x+280, y+175)  
+
+# DEC
+image_turtle16 = turtle.Turtle()
+if str_sum[IDX_SUM_DEC] != '0':
+    image_turtle16.shape(get_imagename_top_not_unid(str_sum[IDX_SUM_DEC]))  
+    image_turtle16.penup()
+    image_turtle16.goto(x+380, y+230)  
+
+# UNID
+image_turtle17 = turtle.Turtle()
+if str_sum[IDX_SUM_UNI] != '0':
+    image_turtle17.shape(get_imagename_top_unid(str_sum[IDX_SUM_UNI]))   
+    image_turtle17.penup()
+    image_turtle17.goto(x+470, y+280)  
 
 image_turtle10.stamp() 
 image_turtle11.stamp() 
 image_turtle12.stamp() 
-image_turtle13.stamp() 
+
+image_turtle13.stamp()
 image_turtle14.stamp() 
+image_turtle15.stamp() 
+image_turtle16.stamp() 
+image_turtle17.stamp() 
 
 x = x + 50
 
-for number in numbers[2:4]:
+for number in numbers[3:6]:
 
     str_number = f"{number:04}" 
 
